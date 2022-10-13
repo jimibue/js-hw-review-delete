@@ -91,6 +91,10 @@ function handleColorChange(event){
    const colorInputElement = document.querySelector('#colorValue')
    changeBackground(colorInputElement.value)
 
+   // you can use this, try with form
+   // const color = prompt('what color would')
+   // changeBackground(color)
+
 }
 
 function renderBackgroundColorForm(){
