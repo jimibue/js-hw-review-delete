@@ -4,9 +4,9 @@
 
 // variable I can use anywhere in this file
 let state = {
-    counter: 4,
+    counter: 0,
     fontSize: 16,
-    backgroundColor: 'red'
+    backgroundColor: 'grey'
 }
 
 // working yay
@@ -55,14 +55,27 @@ function renderCounter(){
    root.append(counter)
 }
 
+function renderFontSize(){
+    const fontSize = document.createElement('div')
+    fontSize.innerHTML=`
+       <div>
+           <h1 style='font-size:${state.fontSize}px'>FontSize: ${state.fontSize}</h1>
+       </div>    
+    `
+    root.append(fontSize) 
+}
+
+function setBackGroundColor(){
+    // in the futre wee need chck if it color
+  root.style.backgroundColor = state.backgroundColor
+}
+
 // this functions renders the elements to the dom
 function render(){
+   setBackGroundColor()
    renderCounter()
+   renderFontSize()
 }
 
 // need to call!!!
 render()
-
-
-
-
