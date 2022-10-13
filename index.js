@@ -14,7 +14,27 @@ function increment(){
   state.counter++
 }
 
-increment()
+// defining the function to increase
+function increaseFontSize(){
+    // we don't font size greate than 100
+    if(state.fontSize < 100){
+        // add one to fontSize
+        state.fontSize++
+    }
+}
 
-console.log(state)
+// defining the function to increase
+function decreaseFontSize(){
+    if(state.fontSize > 1){
+        state.fontSize--
+    }
+}
+
+// this function I am expect to get a color which should be a string
+function changeBackground(color){
+   state.backgroundColor = color
+}
+
+
+
 
