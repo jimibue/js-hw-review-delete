@@ -43,6 +43,9 @@ function decreaseFontSize(){
 // this function I am expect to get a color which should be a string
 function changeBackground(color){
    state.backgroundColor = color
+// whenever we change our state we need
+  // to call our render
+  render()
 }
 
 // want to take my state and => html make it look nice, add buttons
@@ -77,9 +80,33 @@ function renderFontSize(){
     root.append(fontSize) 
 }
 
-function setBackGroundColor(){
+function setBackgroundColor(){
     // in the futre wee need chck if it color
   root.style.backgroundColor = state.backgroundColor
+}
+
+function handleColorChange(event){
+   // do not reload the page, default behavoir of form
+   event.preventDefault()
+   const colorInputElement = document.querySelector('#colorValue')
+   changeBackground(colorInputElement.value)
+
+}
+
+function renderBackgroundColorForm(){
+    const backgroundForm = document.createElement('div')
+    backgroundForm.innerHTML = `
+      <form id='backgroundForm'>
+        <label> color</label>
+        <input id='colorValue'/>
+        <button type='submit'>change color</button>
+      </form>
+    `
+    backgroundForm.addEventListener('submit', handleColorChange)
+    root.append(backgroundForm)
+
+
+   
 }
 
 // this functions renders the elements to the dom
@@ -88,10 +115,16 @@ function render(){
    root.innerHTML = '' 
 
    // rerender it agian
-   setBackGroundColor()
+   setBackgroundColor()
    renderCounter()
    renderFontSize()
+   renderBackgroundColorForm()
 }
 
 // need to call!!!
 render()
+
+// it works
+// it works
+// readiablity
+// effieciency
