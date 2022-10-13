@@ -11,3 +11,17 @@
 9. Copy the URL of your repository. (ssh if you have an ssh key set up, https otherwise)
 10. Run git remote add origin <url> where <url> is the URL of your repository.
 11. Run git push -u origin master to push your local repository to GitHub.
+
+## Homework Review
+
+1. Git Review
+2. Demo how to break up problems
+3. Explore some (react/vue/angular) high level
+
+### breaking up into simpler problems
+
+1. Think about this in js (html and css don't exist)
+
+2. how do we go from js and incorprate html and css
+
+3. event listeners - get these working
