@@ -13,6 +13,9 @@ let state = {
 // this function has a side effect (mutation)
 function increment(){  
   state.counter++
+  // whenever we change our state we need
+  // to call our render
+  render()
 }
 
 // defining the function to increase
@@ -22,6 +25,9 @@ function increaseFontSize(){
         // add one to fontSize
         state.fontSize++
     }
+    // whenever we change our state we need
+  // to call our render
+  render()
 }
 
 // defining the function to increase
@@ -29,6 +35,9 @@ function decreaseFontSize(){
     if(state.fontSize > 1){
         state.fontSize--
     }
+ // whenever we change our state we need
+  // to call our render
+  render()
 }
 
 // this function I am expect to get a color which should be a string
@@ -50,6 +59,7 @@ function renderCounter(){
    counter.innerHTML=`
       <div>
           <h1>Counter ${state.counter}</h1>
+          <button onclick='increment()'>add</button>
       </div>    
    `
    root.append(counter)
@@ -60,7 +70,9 @@ function renderFontSize(){
     fontSize.innerHTML=`
        <div>
            <h1 style='font-size:${state.fontSize}px'>FontSize: ${state.fontSize}</h1>
-       </div>    
+           <button onclick='increaseFontSize()'>increase</button>
+           <button onclick='decreaseFontSize()'>decrease</button>
+           </div>    
     `
     root.append(fontSize) 
 }
@@ -72,6 +84,10 @@ function setBackGroundColor(){
 
 // this functions renders the elements to the dom
 function render(){
+    // delete all root innerHTML / clearit
+   root.innerHTML = '' 
+
+   // rerender it agian
    setBackGroundColor()
    renderCounter()
    renderFontSize()
